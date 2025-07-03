@@ -13,10 +13,21 @@ package org.example.exercicioProxy1;
 
  */
 public class Main {
-
     public static void main(String[] args) {
-        LivroDigital livro = new LivroDigital("Padrões de projeto", "Conteúdo completo do livro...");
+        // Criando usuários
+        Usuario usuarioComum = new Usuario(false);
+        Usuario usuarioPremium = new Usuario(true);
 
-        livro.ler();
+        // Usando o proxy
+        LivroDigital livro = new LivroDigitalProxy(
+                "Padrões de projeto",
+                "Conteúdo completo do livro..."
+        );
+
+        System.out.println("Usuário comum tentando ler:");
+        livro.ler(usuarioComum);
+
+        System.out.println("\nUsuário premium tentando ler:");
+        livro.ler(usuarioPremium);
     }
 }
