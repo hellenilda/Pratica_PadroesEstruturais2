@@ -1,6 +1,6 @@
 package org.example.exercicioProxy2;
 
-public class ServicoSms {
-
-    
+public interface ServicoSms {
+    void enviarMensagem(String destino, String mensagem);
 }
+
